@@ -24,7 +24,7 @@ public class ArrayOps {
         int supposedToBe = (maxValue*(maxValue+1)/2);
         int  currentSum = 0;
 //looking for a way to take maximum integer, take length steps backwards and then thats my first i. isnt working?
-             for (int i = array.length; i >=0; i--)
+             for (int i = array.length-1; i >=0; i--)
             { 
                 currentSum = currentSum + array[i]; 
             }
