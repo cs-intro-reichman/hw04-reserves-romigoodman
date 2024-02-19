@@ -2,8 +2,7 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray = {13,12,15,16,17};
-    System.out.println(maxValue(myArray));
+    int[] myArray = {0};
     System.out.println(findMissingInt(myArray)); 
     }
     
