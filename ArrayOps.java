@@ -20,7 +20,7 @@ public class ArrayOps {
     public static int findMissingInt (int [] array) {
         // The function returns the missing integer - but what if ints in array are larger then the length itself?
         //main idea: get max value; get length thus knowing how many consecutive numbers there are; calcule sum that's supposed to be with the missing int;calculte current sum;find the difference = missing int
-        int maxValue = maxValue(array); //want to use the maximum function - how to do it? 
+        int maxValue = array.length; //want to use the maximum function - how to do it? 
         int supposedToBe = (maxValue*(maxValue+1)/2);
         int  currentSum = 0;
 //looking for a way to take maximum integer, take length steps backwards and then thats my first i. isnt working?
