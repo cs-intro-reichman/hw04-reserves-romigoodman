@@ -2,12 +2,13 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray = {0,1,2,3,4,5,7,8};
-    System.out.println(findMissingInt(myArray)); 
-    System.out.println(secondMaxValue(myArray));
+    int[] myArray1 = {0,2,3,4,5,6,7,8};
+    int[] myArray2={0,1,2,3,4,5,6,7,8};
+    System.out.println(findMissingInt(myArray1)); 
+    System.out.println(secondMaxValue(myArray1));
+    System.out.println(containsTheSameElements(myArray1, myArray2));
     }
-    
-    
+
     public static int findMissingInt (int [] array) {
         //main idea: get max value; get length thus knowing how many consecutive numbers there are; calcule sum that's supposed to be with the missing int;calculte current sum;find the difference = missing int
         int maxValue = array.length; 
@@ -31,15 +32,24 @@ public class ArrayOps {
     for (int i = 0; i < array.length; i++) {
         if (array[i] > secoundMax && array[i]< maxMax)
         {  secoundMax = array[i];  }
-    }
-    return secoundMax;
-    }
+    } return secoundMax; }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
-        return false;
-    }
+        boolean sameElement = false;
+        for (int i = 0; i < array1.length; i++) {//0, 1, 2
+			for (int j = 0; j < array1.length; j++) {//0, 2
+				if (array1[i] == array2[j]) 
+                { sameElement = true; }  
+            }
 
+            if (sameElement==false)  {
+                return false;
+            }
+            sameElement = false;
+        }
+
+        return sameElement = true;
+    }
     public static boolean isSorted(int [] array) {
         // int i = array length, for loop that goes over every int, 
         //and checks if array[i]>array[i-1] and array[i]<array[i+1]
