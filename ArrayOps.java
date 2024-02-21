@@ -2,7 +2,7 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {2, 8, 3, 7};
+    int[] myArray1 = {2, 8, 3, 7, 8};
     int[] myArray2 ={0,1,2,3,4,5,6,7,8};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
@@ -19,20 +19,37 @@ public class ArrayOps {
         int missingInt = supposedToBe - currentSum;
             return missingInt;  }
 
-    public static int maxValue (int[] array) {
+        public static int countsOccurance (int[] array) {
+            int occuranceOfMax = 0; 
+            for (int i = 0; i < array.length; i++) {
+                if (array[i]==maxValue(array))
+                occuranceOfMax++; } 
+                return occuranceOfMax; }
+                    
+
+        public static int maxValue (int[] array) {
         int maxValue = array[0]; 
 		    for (int i = 0; i < array.length; i++) {
 		    	if (array[i] > maxValue) 
                 {  maxValue = array[i];  } }
             return maxValue;  }
 
-    public static int secondMaxValue(int [] array) {
-    int maxMax = maxValue(array);
-    int secoundMax = 0;
-    for (int i = 0; i < array.length; i++) {
-        if (array[i] > secoundMax && array[i]<= maxMax)
-        {  secoundMax = array[i];  }
-    } return secoundMax; }
+        public static int secondMaxValue(int [] array) {
+        int maxMax = maxValue(array);
+        int occuranceOfMax = countsOccurance(array);
+        int secoundMax = 0;
+        for (int i = 0; i < array.length; i++) {
+        if (occuranceOfMax>1) 
+        {
+        secoundMax = maxMax;
+        }
+        else if (array[i] > secoundMax && array[i]!= maxMax) 
+                { 
+                secoundMax = array[i]; 
+                }
+         }
+         return secoundMax;
+        }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean sameElement = false;
