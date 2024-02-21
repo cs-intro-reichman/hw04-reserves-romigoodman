@@ -2,8 +2,8 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {0,2,3,4,5,6,7,8};
-    int[] myArray2={0,1,2,3,4,5,6,7,8};
+    int[] myArray1 = {2, 8, 3, 7};
+    int[] myArray2 ={0,1,2,3,4,5,6,7,8};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
     System.out.println(containsTheSameElements(myArray1, myArray2));
@@ -30,7 +30,7 @@ public class ArrayOps {
     int maxMax = maxValue(array);
     int secoundMax = 0;
     for (int i = 0; i < array.length; i++) {
-        if (array[i] > secoundMax && array[i]< maxMax)
+        if (array[i] > secoundMax && array[i]<= maxMax)
         {  secoundMax = array[i];  }
     } return secoundMax; }
 
