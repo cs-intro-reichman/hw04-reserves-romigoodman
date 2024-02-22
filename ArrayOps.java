@@ -87,7 +87,7 @@ public class ArrayOps {
        	for ( j1 = 0; j1 < array2.length; j1++) 
          {
             for ( k = 0; k < array1.length; k++)
-		
+            
              {
 				if (array1[k] == array2[j1]) 
                 { sameElement = true; }  
