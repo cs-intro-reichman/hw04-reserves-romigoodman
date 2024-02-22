@@ -19,6 +19,7 @@ public class ArrayOps {
         int missingInt = supposedToBe - currentSum;
             return missingInt;  }
 
+       
         public static int countsOccurance (int[] array) {
             int occuranceOfMax = 0; 
             for (int i = 0; i < array.length; i++) {
@@ -50,27 +51,41 @@ public class ArrayOps {
          }
          return secoundMax;
         }
+        
+        public static int countsOccuranceGeneral (int[] array) {
+            int [] occuranceOfNum = new int[array.length]; 
+            for (int i = 0; i < array.length; i++) {
+                for (int j=1; j<array.length; j++){
+                  if (array[i]==array[j])   
+                }
+                occuranceOfNum[i]++; } 
+                return -1; }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean sameElement = false;
-        for (int i = 0; i < array1.length; i++) {//0, 1, 2
-			for (int j = 0; j < array1.length; j++) {//0, 2
+        for (int i = 0; i < array1.length; i++) {
+			for (int j = 0; j < array1.length; j++) {
 				if (array1[i] == array2[j]) 
                 { sameElement = true; }  
             }
-
-            if (sameElement==false)  {
-                return false;
+            if (sameElement==false)  
+            {
+            return false;
             }
-            sameElement = false;
+            else if (i==array1.length-1)
+            {
+            return sameElement;
+            }
+            else 
+            {
+             sameElement = false;   
+            }
         }
 
-        return sameElement = true;
+        return sameElement;
     }
     public static boolean isSorted(int [] array) {
-        // int i = array length, for loop that goes over every int, 
-        //and checks if array[i]>array[i-1] and array[i]<array[i+1]
-        //else break
+      int 
         return false;
     }
 
