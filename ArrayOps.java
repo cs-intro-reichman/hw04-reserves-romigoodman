@@ -2,11 +2,12 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {2,2,3,7,8,3,2};
+    int[] myArray1 = {-4, 3, 5, 7};
     int[] myArray2 ={1, 2, 2, 1};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
     System.out.println(containsTheSameElements(myArray1, myArray2));
+    System.out.println(isSorted(myArray1));
     }
 
     public static int findMissingInt (int [] array) {
@@ -87,7 +88,7 @@ public class ArrayOps {
        	for ( j1 = 0; j1 < array2.length; j1++) 
          {
             for ( k = 0; k < array1.length; k++)
-            
+             
              {
 				if (array1[k] == array2[j1]) 
                 { sameElement = true; }  
@@ -109,8 +110,55 @@ public class ArrayOps {
         
         return sameElement;
     }
-    public static boolean isSorted(int [] array) { 
-        return false;
+
+    public static boolean isSorted(int [] array) 
+    { 
+        boolean isSorted = false;
+        if (array[0]>array[1])
+       {
+        isSorted = true;
+       }
+
+        if (isSorted==true)
+        {
+            for (int i=0; i<array.length-2;i++)
+            {
+               if (array[i] > array[i+1])
+               {
+                isSorted =!isSorted;
+               }
+
+               else 
+               {
+                return false;
+               }
+            }
+
+            if (array[array.length-1] > array[array.length-2])
+            return isSorted=true;
+
+        }
+        else 
+        {
+            for (int j=0; j<array.length-2;j++)
+            {
+               if (array[j] < array[j+1])
+               {
+                isSorted =!isSorted;
+               }
+
+               else 
+               {
+                return false;
+               }
+            }
+
+        if (array[(array.length-2)] < array[(array.length-1)])
+            return isSorted=true;
+        }  
+         return isSorted;
+       }
+    
+     
     }
 
-}
