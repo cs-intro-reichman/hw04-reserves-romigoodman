@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     String myWord= "Hello World";
+     String myWord= "    Hello World";
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(camelCase(myWord));
     }
@@ -71,13 +71,23 @@ public class StringOps {
         return toBePrinted;
     }
 
+    public static int checksSpaces (String string){
+        int startIndex = 0;
+        char ch = string.charAt(startIndex);
+        while ((startIndex < string.length()) && (ch ==' '))
+        {
+        startIndex++;
+        }
+        return startIndex;
+    }
+   
     public static String camelCase (String string) 
     {
-       
         String ans = "";
         String inLowerCase = lowerCase(string);
-        ans = ans + inLowerCase.charAt(0);
-        int i = 1;
+    
+        ans = inLowerCase.substring(checksSpaces(string));
+        int i = 0;
         while (i < inLowerCase.length())
         {
         char ch = inLowerCase.charAt(i);
@@ -104,6 +114,8 @@ public class StringOps {
         }
         return finalAnswer;
     }
+
+
 
     public static int[] allIndexOf (String string, char chr) {
         // Write your code here:
