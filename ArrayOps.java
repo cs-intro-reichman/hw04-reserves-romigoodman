@@ -56,9 +56,11 @@ public class ArrayOps {
             int [] occuranceOfNum = new int[array.length]; 
             for (int i = 0; i < array.length; i++) {
                 for (int j=1; j<array.length; j++){
-                  if (array[i]==array[j])   
+                  if (array[i]==array[j]) {
+                   occuranceOfNum[i]++; 
+                  }  
                 }
-                occuranceOfNum[i]++; } 
+             } 
                 return -1; }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
@@ -84,8 +86,7 @@ public class ArrayOps {
 
         return sameElement;
     }
-    public static boolean isSorted(int [] array) {
-      int 
+    public static boolean isSorted(int [] array) { 
         return false;
     }
 
