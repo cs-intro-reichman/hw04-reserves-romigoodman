@@ -2,7 +2,7 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {1, 2};
+    int[] myArray1 = {2,2,3,7,8,3,2};
     int[] myArray2 ={1, 2, 2, 1};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
@@ -65,8 +65,10 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean sameElement = false;
-        for (int i = 0; i < array1.length; i++) {
-			for (int j = 0; j < array1.length; j++) {
+        for (int i = 0; i < array1.length; i++)
+         {
+			for (int j = 0; j < array2.length; j++)
+             {
 				if (array1[i] == array2[j]) 
                 { sameElement = true; }  
             }
@@ -74,16 +76,37 @@ public class ArrayOps {
             {
             return false;
             }
-            else if (i==array1.length-1)
-            {
-            return sameElement;
-            }
+           
             else 
             {
              sameElement = false;   
             }
         }
+        int j1=0,k=0;
 
+       	for ( j1 = 0; j1 < array2.length; j1++) 
+         {
+            for ( k = 0; k < array1.length; k++)
+		
+             {
+				if (array1[k] == array2[j1]) 
+                { sameElement = true; }  
+            }
+            if (sameElement==false)  
+            {
+            return false;
+            }
+           else if (j1==(array2.length-1)&&(k==array1.length-1))
+            {
+                
+                return true;
+            }
+            else 
+            {
+            sameElement = false;   
+            }
+        }
+        
         return sameElement;
     }
     public static boolean isSorted(int [] array) { 
