@@ -2,8 +2,8 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {1,2,3,4,5};
-    int[] myArray2 ={1,2,3,4,5};
+    int[] myArray1 = {1, 2, 3};
+    int[] myArray2 ={4, 5, 6};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
     System.out.println(containsTheSameElements(myArray1, myArray2));
@@ -62,42 +62,39 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) 
     {
-        boolean sameElement = false;
+        boolean sameElement=false;
 
-        for (int i = 0; i < array1.length; i++)
-         {
-			for (int j = 0; j < array2.length; j++)
-            {
-				if (array1[i] == array2[j]) 
-                { sameElement = true; }  
+        // Check if all elements of array1 are present in array2
+        for (int i = 0; i < array1.length; i++) {
+            sameElement = false; // Reset sameElement for each element in array1
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    sameElement = true;
+                    break; // Exit loop once the element is found
+                }
             }
-
-            if (sameElement==false)  
-            {
-            return sameElement;
+            if (sameElement==false) {
+                return sameElement; // Return false if an element in array1 is not found in array2
             }
         }
-            for ( int j = 0; j < array2.length; j++) 
-            {
-                for ( int i = 0; i < array1.length; i++) 
-                {
-                    if (array1[j] == array2[i]) 
-                    {
-                    sameElement = true; 
-                    } 
+    
+        // Check if all elements of array2 are present in array1
+        for (int i = 0; i < array2.length; i++) {
+            sameElement = false; // Reset sameElement for each element in array2
+            for (int j = 0; j < array1.length; j++) {
+                if (array2[i] == array1[j]) {
+                    sameElement = true;
+                    break; // Exit loop once the element is found
                 }
-                    if (sameElement==false)
-                   
-                    return sameElement;
             }
-            return sameElement;
+            if (sameElement==false) {
+                return sameElement; // Return false if an element in array2 is not found in array1
+            }
+        }
+        return sameElement;
     }
+    
 
-  
-
-    
-    
-    
     public static boolean isSorted(int [] array) 
     { 
         boolean isSorted = false;
@@ -108,7 +105,7 @@ public class ArrayOps {
 
         if (isSorted==true)
         {
-            for (int i=0; i<array.length-2;i++)
+            for (int i=0; i < array.length-2; i++)
             {
                if (array[i] > array[i+1])
                {
