@@ -2,8 +2,8 @@ public class ArrayOps {
     //This class offers some functions for processing arrays
 
     public static void main(String[] args) {
-    int[] myArray1 = {-4, 3, 5, 7};
-    int[] myArray2 ={1, 2, 2, 1};
+    int[] myArray1 = {1,2,3,4,5};
+    int[] myArray2 ={1,2,3,4,5};
     System.out.println(findMissingInt(myArray1)); 
     System.out.println(secondMaxValue(myArray1));
     System.out.println(containsTheSameElements(myArray1, myArray2));
@@ -52,17 +52,7 @@ public class ArrayOps {
          }
          return secoundMax;
         }
-        
-        public static int countsOccuranceGeneral (int[] array) {
-            int [] occuranceOfNum = new int[array.length]; 
-            for (int i = 0; i < array.length; i++) {
-                for (int j=1; j<array.length; j++){
-                  if (array[i]==array[j]) {
-                   occuranceOfNum[i]++; 
-                  }  
-                }
-             } 
-                return -1; }
+               
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean sameElement = false;
