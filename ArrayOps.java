@@ -10,33 +10,39 @@ public class ArrayOps {
     System.out.println(isSorted(myArray1));
     }
 
-    public static int findMissingInt (int [] array) {
-        //main idea: get max value; get length thus knowing how many consecutive numbers there are; calcule sum that's supposed to be with the missing int;calculte current sum;find the difference = missing int
+    public static int findMissingInt (int [] array) 
+    {
         int maxValue = array.length; 
         int supposedToBe = (maxValue*(maxValue+1)/2);
         int  currentSum = 0;
              for (int i = array.length-1; i >=0; i--)
             { currentSum = currentSum + array[i]; }
         int missingInt = supposedToBe - currentSum;
-            return missingInt;  }
+            return missingInt;  
+    }
 
        
-        public static int countsOccurance (int[] array) {
+        public static int countsOccurance (int[] array) 
+        {
             int occuranceOfMax = 0; 
             for (int i = 0; i < array.length; i++) {
                 if (array[i]==maxValue(array))
                 occuranceOfMax++; } 
-                return occuranceOfMax; }
+                return occuranceOfMax; 
+        }
                     
 
-        public static int maxValue (int[] array) {
-        int maxValue = array[0]; 
+        public static int maxValue (int[] array) 
+        {
+            int maxValue = array[0]; 
 		    for (int i = 0; i < array.length; i++) {
 		    	if (array[i] > maxValue) 
                 {  maxValue = array[i];  } }
-            return maxValue;  }
+            return maxValue;  
+        }
 
-        public static int secondMaxValue(int [] array) {
+        public static int secondMaxValue(int [] array) 
+        {
         int maxMax = maxValue(array);
         int occuranceOfMax = countsOccurance(array);
         int secoundMax = 0;
@@ -54,53 +60,44 @@ public class ArrayOps {
         }
                
 
-    public static boolean containsTheSameElements(int [] array1,int [] array2) {
+    public static boolean containsTheSameElements(int [] array1,int [] array2) 
+    {
         boolean sameElement = false;
+
         for (int i = 0; i < array1.length; i++)
          {
 			for (int j = 0; j < array2.length; j++)
-             {
+            {
 				if (array1[i] == array2[j]) 
                 { sameElement = true; }  
             }
-            if (sameElement==false)  
-            {
-            return false;
-            }
-           
-            else 
-            {
-             sameElement = false;   
-            }
-        }
-        int j1=0,k=0;
 
-       	for ( j1 = 0; j1 < array2.length; j1++) 
-         {
-            for ( k = 0; k < array1.length; k++)
-             
-             {
-				if (array1[k] == array2[j1]) 
-                { sameElement = true; }  
-            }
             if (sameElement==false)  
             {
-            return false;
-            }
-           else if (j1==(array2.length-1)&&(k==array1.length-1))
-            {
-                
-                return true;
-            }
-            else 
-            {
-            sameElement = false;   
+            return sameElement;
             }
         }
-        
-        return sameElement;
+            for ( int j = 0; j < array2.length; j++) 
+            {
+                for ( int i = 0; i < array1.length; i++) 
+                {
+                    if (array1[j] == array2[i]) 
+                    {
+                    sameElement = true; 
+                    } 
+                }
+                    if (sameElement==false)
+                   
+                    return sameElement;
+            }
+            return sameElement;
     }
 
+  
+
+    
+    
+    
     public static boolean isSorted(int [] array) 
     { 
         boolean isSorted = false;
@@ -147,8 +144,7 @@ public class ArrayOps {
             return isSorted=true;
         }  
          return isSorted;
-       }
-    
-     
     }
+}
+    
 
