@@ -134,7 +134,7 @@ public class ArrayOps {
                }
             }
 
-            if (array[array.length-1] > array[array.length-2])
+            if (array[array.length-2] > array[array.length-1])
             return isSorted=true;
 
         }
