@@ -22,16 +22,13 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     String myWord= "MMMM";
-     char myChar = 'M';
+     String myWord= "Hello World";
+     char myChar = 'l';
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(lowerCase(myWord));
      System.out.println(checksSpacesBegining(myWord));
      System.out.println(camelCase(myWord));
-     for (int i=0; i<myWord.length();i++)
-     {
-       System.out.print(allIndexOf(myWord, myChar)[i] + " "); 
-     }
+    System.out.print(allIndexOf(myWord, myChar) + " "); 
 
     }
 
