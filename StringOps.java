@@ -22,11 +22,10 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     String myWord= "    Hello World";
+     String myWord= "  tWo     wordS";
      System.out.println(capVowelsLowRest(myWord));
-     System.out.println(camelCase(myWord));
      System.out.println(lowerCase(myWord));
-     System.out.println(checksSpaces(myWord));
+     System.out.println(checksSpacesBegining(myWord));
      System.out.println(camelCase(myWord));
     }
 
@@ -75,13 +74,14 @@ public class StringOps {
     }
 //want to write the same function but that will work even if i have spaces at the start of the expression:
 
-    public static int checksSpaces (String string) {
+
+public static int checksSpacesBegining (String string) {
         
         int i = 0;
-        while (i < string.length()) //0<15
+        while (i < string.length()) 
         {
-        char ch = string.charAt(i);//ch = char.At(0)
-            if (ch == 32)
+        char ch = string.charAt(i);
+            if(ch == 32)
             {
             i++;
             }
@@ -93,68 +93,40 @@ public class StringOps {
         return i;
 }
    
-// public static String camelCase (String string) 
-// {
-//     String ans = "";
-//     String inLowerCase = lowerCase(string);
-
-//     int i = 0;
-//     while (i < inLowerCase.length())
-//     {
-//     char ch = inLowerCase.charAt(i);
-//         if (ch == ' ') 
-//             {
-//             ans = ans + ch + (char) (inLowerCase.charAt(i + 1) - 32);
-//             i++;
-//             }
-//         else 
-//             {
-//             ans = ans + ch;
-//             }
-//         i++;
-//     }
-//     String finalAnswer = "";
-//     for (int j=0; j<ans.length(); j++)
-//     {  
-//         char ch = ans.charAt(j);
-//         if (ch != ' ')
-//          {
-//         finalAnswer = finalAnswer + ch;
-//          }
-
-//     }
-//     return finalAnswer;
-// }
-
-
-
 
 
 public static String camelCase (String string) 
     {
         String ans = "";
-        String inLowerCase = lowerCase(string);
-        String withoutSpaces = inLowerCase.substring(checksSpaces(string)); // word without spaces at first
-        int i = 0;
-        while (i < withoutSpaces.length())
+        String inLowerCase = lowerCase(string); 
+        String withoutSpaces = inLowerCase.substring(checksSpacesBegining(string)); //string without space at the beggining: //two   words
+
+        for (int i=0; i <= withoutSpaces.length()-1; i++) 
         {
-        char ch = withoutSpaces.charAt(i);
-            if (ch == ' ') 
-                {
-                ans = ans + ch + (char) (withoutSpaces.charAt(i + 1) - 32);
-                i++;
-                }
+        char ch = withoutSpaces.charAt(i); 
+            if ((ch == ' ') && (withoutSpaces.charAt(i+1) == ' '))
+            {
+                ans = ans + ch; 
+            }
+            else if ((ch == ' ') && (withoutSpaces.charAt(i+1) != ' '))
+            {
+                ans = ans + ch + ((char)((withoutSpaces.charAt(i+1)) - 32)); //how can i make sure that once i gets to that char it wont print it again 
+            }
+            else if ((i!=0) && ((ch != ' ') && (withoutSpaces.charAt(i-1) == ' ')))
+            {
+                ans = ans+"";
+            }
             else 
-                {
-                ans = ans + ch;
-                }
-            i++;
+            {
+            ans = ans + ch; 
+            }
+  
         }
         String finalAnswer = "";
         for (int j=0; j<ans.length(); j++)
         {  
             char ch = ans.charAt(j);
-            if (ch != ' ')
+            if (ch != 32)
              {
             finalAnswer = finalAnswer + ch;
              }
