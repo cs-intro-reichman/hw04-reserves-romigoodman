@@ -22,13 +22,13 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     String myWord= "Hello world";
-     char myChar = 'l';
+     String myWord= "MMMM";
+     char myChar = 'M';
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(lowerCase(myWord));
      System.out.println(checksSpacesBegining(myWord));
      System.out.println(camelCase(myWord));
-     for (int i=0; i<3;i++)
+     for (int i=0; i<myWord.length();i++)
      {
        System.out.print(allIndexOf(myWord, myChar)[i] + " "); 
      }
@@ -146,13 +146,12 @@ public static String camelCase (String string)
     public static int[] allIndexOf (String string, char chr) {
         
         String toCheck= lowerCase(string);
-        int counter = 0;
-        int j=0;
-
         if ((chr>= 'A') && (chr<='Z'))         
             {
             chr = (char)(chr + 32); 
             }
+            
+            int j=0;
         int[] arrayOfIndexes= new int[string.length()];
         for (int i=0; i<toCheck.length(); i++)
             {
@@ -162,15 +161,8 @@ public static String camelCase (String string)
                 j++;
                 }    
             }
-        for (int i=0; i<arrayOfIndexes.length; i++)
-        {
-            if (arrayOfIndexes[i]!=0)
-            {
-            counter++;
-            }
-        }
-        int [] newArray = new int [counter];
-        for (int i=0; i<=(counter-1); i++)
+        int [] newArray = new int [j];
+        for (int i=0; i<(j); i++)
             {
             newArray[i]=arrayOfIndexes[i];
 
