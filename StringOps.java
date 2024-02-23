@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-     String myWord= "Hello World";
-     char myChar = 'w';
+     String myWord= "Hello world";
+     char myChar = 'l';
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(lowerCase(myWord));
      System.out.println(checksSpacesBegining(myWord));
@@ -144,27 +144,26 @@ public static String camelCase (String string)
 
     
     public static int[] allIndexOf (String string, char chr) {
-        
-        int[] arrayOfIndexes = new int[string.length()];
         String toCheck= lowerCase(string);
-        
+        int j=0;
         if ((chr>= 'A') && (chr<='Z'))         
             {
             chr = (char)(chr + 32); 
             }
-       
-            for (int i=0; i<toCheck.length(); i++)
-        { 
-            int j = 0;
-            if (toCheck.charAt(i) == chr ) 
+            int[] arrayOfIndexes= new int[string.length()];
+            for (int i=0; i<=toCheck.length(); i++)
             {
-            arrayOfIndexes[j]=i;
-            j++;
+                if (toCheck.charAt(i) == chr )
+                {
+                arrayOfIndexes[j]=i;
+                j++;
+                }  
             }
-            
+            int [] newArray = new int [j];
+            for (int i=0; i<=j; i++)
+            {
+                arrayOfIndexes[i]=newArray[i];
             }
-            return arrayOfIndexes;
+            return newArray;
         }
-
-        
     }
