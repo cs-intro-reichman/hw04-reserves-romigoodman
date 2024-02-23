@@ -25,30 +25,9 @@ public class StringOps {
      String myWord= "    Hello World";
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(camelCase(myWord));
+     System.out.println(lowerCase(myWord));
     }
 
-    public static String lowerCase(String string) 
-
-    {
-        String conversToLowerCase = "";
-
-        for (int i=0; i<string.length(); i++) 
-        {
-            char isUpperCase = string.charAt(i);
-            
-            if ((isUpperCase>= 'A') && (isUpperCase<='Z'))         
-            {
-            conversToLowerCase = conversToLowerCase + (char)(string.charAt(i) + 32); 
-            }
-
-            else
-            {
-                conversToLowerCase = conversToLowerCase + isUpperCase;
-            }
-
-        }
-        return conversToLowerCase;
-    }
   
     public static String capVowelsLowRest (String string) 
     {
@@ -71,49 +50,116 @@ public class StringOps {
         return toBePrinted;
     }
 
-    public static int checksSpaces (String string){
-        int startIndex = 0;
-        char ch = string.charAt(startIndex);
-        while ((startIndex < string.length()) && (ch ==' '))
-        {
-        startIndex++;
-        }
-        return startIndex;
-    }
-   
-    public static String camelCase (String string) 
+    public static String lowerCase(String string) 
     {
-        String ans = "";
-        String inLowerCase = lowerCase(string);
-    
-        ans = inLowerCase.substring(checksSpaces(string));
-        int i = 0;
-        while (i < inLowerCase.length())
+        String conversToLowerCase = "";
+
+        for (int i=0; i<string.length(); i++) 
         {
-        char ch = inLowerCase.charAt(i);
-            if (ch == ' ') 
-                {
-                ans = ans + ch + (char) (inLowerCase.charAt(i + 1) - 32);
-                i++;
-                }
-            else 
-                {
-                ans = ans + ch;
-                }
-            i++;
-        }
-        String finalAnswer = "";
-        for (int j=0; j<ans.length(); j++)
-        {  
-            char ch = ans.charAt(j);
-            if (ch != ' ')
-             {
-            finalAnswer = finalAnswer + ch;
-             }
+            char isUpperCase = string.charAt(i);
+            
+            if ((isUpperCase>= 'A') && (isUpperCase<='Z'))         
+            {
+            conversToLowerCase = conversToLowerCase + (char)(string.charAt(i) + 32); 
+            }
+
+            else
+            {
+                conversToLowerCase = conversToLowerCase + isUpperCase;
+            }
 
         }
-        return finalAnswer;
+        return conversToLowerCase;
     }
+
+//     public static int checksSpaces (String string) {
+//         int startIndex = 0;
+//         char ch = string.charAt(startIndex);
+//         while (startIndex < string.length());
+//         {
+//         if (ch ==' ')
+//         {
+//         startIndex++;
+//         }
+//         else 
+//         {
+//         return startIndex;
+//         }
+//         startIndex++; 
+//     }
+// }
+   
+public static String camelCase (String string) 
+{
+    String ans = "";
+    String inLowerCase = lowerCase(string);
+
+    int i = 0;
+    while (i < inLowerCase.length())
+    {
+    char ch = inLowerCase.charAt(i);
+        if (ch == ' ') 
+            {
+            ans = ans + ch + (char) (inLowerCase.charAt(i + 1) - 32);
+            i++;
+            }
+        else 
+            {
+            ans = ans + ch;
+            }
+        i++;
+    }
+    String finalAnswer = "";
+    for (int j=0; j<ans.length(); j++)
+    {  
+        char ch = ans.charAt(j);
+        if (ch != ' ')
+         {
+        finalAnswer = finalAnswer + ch;
+         }
+
+    }
+    return finalAnswer;
+}
+
+
+
+
+
+// public static String camelCase (String string) 
+    // {
+    //     String ans = "";
+    //     String inLowerCase = lowerCase(string);
+    
+    //     ans = inLowerCase.substring(checksSpaces(string)); // word without spaces at first
+
+    //     int i = 0;
+    //     while (i < ans.length())
+    //     {
+    //     char ch = ans.charAt(i);
+    //         if (ch == ' ') 
+    //             {
+    //             ans = ans + ch + (char) (ans.charAt(i + 1) - 32);
+    //             i++;
+    //             }
+    //         else 
+    //             {
+    //             ans = ans + ch;
+    //             }
+    //         i++;
+    //     }
+    //     String finalAnswer = "";
+    //     for (int j=0; j<ans.length(); j++)
+    //     {  
+    //         char ch = ans.charAt(j);
+    //         if (ch != ' ')
+    //          {
+    //         finalAnswer = finalAnswer + ch;
+    //          }
+
+    //     }
+    //     return finalAnswer;
+    // }
 
 
 
