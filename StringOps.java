@@ -144,26 +144,37 @@ public static String camelCase (String string)
 
     
     public static int[] allIndexOf (String string, char chr) {
+        
         String toCheck= lowerCase(string);
+        int counter = 0;
         int j=0;
+
         if ((chr>= 'A') && (chr<='Z'))         
             {
             chr = (char)(chr + 32); 
             }
-            int[] arrayOfIndexes= new int[string.length()];
-            for (int i=0; i<=toCheck.length(); i++)
+        int[] arrayOfIndexes= new int[string.length()];
+        for (int i=0; i<toCheck.length(); i++)
             {
                 if (toCheck.charAt(i) == chr )
                 {
                 arrayOfIndexes[j]=i;
                 j++;
-                }  
+                }    
             }
-            int [] newArray = new int [j];
-            for (int i=0; i<=j; i++)
+        for (int i=0; i<arrayOfIndexes.length; i++)
+        {
+            if (arrayOfIndexes[i]!=0)
             {
-                arrayOfIndexes[i]=newArray[i];
+            counter++;
             }
-            return newArray;
         }
+        int [] newArray = new int [counter];
+        for (int i=0; i<(counter); i++)
+            {
+            newArray[i]=arrayOfIndexes[i];
+
+        }
+        return newArray;
     }
+}
