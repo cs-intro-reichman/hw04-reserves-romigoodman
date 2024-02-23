@@ -26,6 +26,8 @@ public class StringOps {
      System.out.println(capVowelsLowRest(myWord));
      System.out.println(camelCase(myWord));
      System.out.println(lowerCase(myWord));
+     System.out.println(checksSpaces(myWord));
+     System.out.println(camelCase1(myWord));
     }
 
   
@@ -71,23 +73,25 @@ public class StringOps {
         }
         return conversToLowerCase;
     }
+//want to write the same function but that will work even if i have spaces at the start of the expression:
 
-//     public static int checksSpaces (String string) {
-//         int startIndex = 0;
-//         char ch = string.charAt(startIndex);
-//         while (startIndex < string.length());
-//         {
-//         if (ch ==' ')
-//         {
-//         startIndex++;
-//         }
-//         else 
-//         {
-//         return startIndex;
-//         }
-//         startIndex++; 
-//     }
-// }
+    public static int checksSpaces (String string) {
+        
+        int i = 0;
+        while (i < string.length()) //0<15
+        {
+        char ch = string.charAt(i);//ch = char.At(0)
+            if (ch == 32)
+            {
+            i++;
+            }
+            else 
+            {
+            return i;
+            }
+        }
+        return i;
+}
    
 public static String camelCase (String string) 
 {
@@ -126,40 +130,38 @@ public static String camelCase (String string)
 
 
 
-// public static String camelCase (String string) 
-    // {
-    //     String ans = "";
-    //     String inLowerCase = lowerCase(string);
-    
-    //     ans = inLowerCase.substring(checksSpaces(string)); // word without spaces at first
+public static String camelCase1 (String string) 
+    {
+        String ans = "";
+        String inLowerCase = lowerCase(string);
+        String withoutSpaces = inLowerCase.substring(checksSpaces(string)); // word without spaces at first
+        int i = 0;
+        while (i < withoutSpaces.length())
+        {
+        char ch = withoutSpaces.charAt(i);
+            if (ch == ' ') 
+                {
+                ans = ans + ch + (char) (withoutSpaces.charAt(i + 1) - 32);
+                i++;
+                }
+            else 
+                {
+                ans = ans + ch;
+                }
+            i++;
+        }
+        String finalAnswer = "";
+        for (int j=0; j<ans.length(); j++)
+        {  
+            char ch = ans.charAt(j);
+            if (ch != ' ')
+             {
+            finalAnswer = finalAnswer + ch;
+             }
 
-    //     int i = 0;
-    //     while (i < ans.length())
-    //     {
-    //     char ch = ans.charAt(i);
-    //         if (ch == ' ') 
-    //             {
-    //             ans = ans + ch + (char) (ans.charAt(i + 1) - 32);
-    //             i++;
-    //             }
-    //         else 
-    //             {
-    //             ans = ans + ch;
-    //             }
-    //         i++;
-    //     }
-    //     String finalAnswer = "";
-    //     for (int j=0; j<ans.length(); j++)
-    //     {  
-    //         char ch = ans.charAt(j);
-    //         if (ch != ' ')
-    //          {
-    //         finalAnswer = finalAnswer + ch;
-    //          }
-
-    //     }
-    //     return finalAnswer;
-    // }
+        }
+        return finalAnswer;
+    }
 
 
 
