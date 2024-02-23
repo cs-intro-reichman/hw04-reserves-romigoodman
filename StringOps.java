@@ -27,7 +27,7 @@ public class StringOps {
      System.out.println(camelCase(myWord));
      System.out.println(lowerCase(myWord));
      System.out.println(checksSpaces(myWord));
-     System.out.println(camelCase1(myWord));
+     System.out.println(camelCase(myWord));
     }
 
   
@@ -93,44 +93,44 @@ public class StringOps {
         return i;
 }
    
+// public static String camelCase (String string) 
+// {
+//     String ans = "";
+//     String inLowerCase = lowerCase(string);
+
+//     int i = 0;
+//     while (i < inLowerCase.length())
+//     {
+//     char ch = inLowerCase.charAt(i);
+//         if (ch == ' ') 
+//             {
+//             ans = ans + ch + (char) (inLowerCase.charAt(i + 1) - 32);
+//             i++;
+//             }
+//         else 
+//             {
+//             ans = ans + ch;
+//             }
+//         i++;
+//     }
+//     String finalAnswer = "";
+//     for (int j=0; j<ans.length(); j++)
+//     {  
+//         char ch = ans.charAt(j);
+//         if (ch != ' ')
+//          {
+//         finalAnswer = finalAnswer + ch;
+//          }
+
+//     }
+//     return finalAnswer;
+// }
+
+
+
+
+
 public static String camelCase (String string) 
-{
-    String ans = "";
-    String inLowerCase = lowerCase(string);
-
-    int i = 0;
-    while (i < inLowerCase.length())
-    {
-    char ch = inLowerCase.charAt(i);
-        if (ch == ' ') 
-            {
-            ans = ans + ch + (char) (inLowerCase.charAt(i + 1) - 32);
-            i++;
-            }
-        else 
-            {
-            ans = ans + ch;
-            }
-        i++;
-    }
-    String finalAnswer = "";
-    for (int j=0; j<ans.length(); j++)
-    {  
-        char ch = ans.charAt(j);
-        if (ch != ' ')
-         {
-        finalAnswer = finalAnswer + ch;
-         }
-
-    }
-    return finalAnswer;
-}
-
-
-
-
-
-public static String camelCase1 (String string) 
     {
         String ans = "";
         String inLowerCase = lowerCase(string);
