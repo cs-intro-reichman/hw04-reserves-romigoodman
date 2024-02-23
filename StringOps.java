@@ -28,7 +28,7 @@ public class StringOps {
      System.out.println(lowerCase(myWord));
      System.out.println(checksSpacesBegining(myWord));
      System.out.println(camelCase(myWord));
-     for (int i=0; i<myWord.length();i++)
+     for (int i=0; i<3;i++)
      {
        System.out.print(allIndexOf(myWord, myChar)[i] + " "); 
      }
@@ -170,7 +170,7 @@ public static String camelCase (String string)
             }
         }
         int [] newArray = new int [counter];
-        for (int i=0; i<(counter); i++)
+        for (int i=0; i<=(counter-1); i++)
             {
             newArray[i]=arrayOfIndexes[i];
 
